@@ -1,0 +1,42 @@
+.gallery {
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__image {
+    object-fit: cover;
+    height: 200px;
+    width: auto;
+  }
+}
+
+.image {
+  &__container {
+    display: flex;
+    width: 200px;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__description-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.374);
+    transition: all 250ms ease;
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+      backdrop-filter: blur(5px);
+    }
+  }
+}

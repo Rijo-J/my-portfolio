@@ -1,0 +1,98 @@
+:root {
+  --d3: 10;
+  --esp: 2.5;
+  --esc: 2;
+  --escd: 0.5;
+}
+
+
+
+#light {
+  fill: var(--color-white);
+}
+
+#dark {
+  fill: var(--color-bg-variant);
+}
+
+#darks {
+  fill: var(--color-primary);
+}
+
+.lens__container {
+    background-color: transparent;
+    position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 4rem;
+  height: 4rem;
+  transition: var(--transition);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.lens {
+  width: 20px;
+  height: 20px;
+  transform-origin: center;
+  transform: rotate(0deg);
+  transition: var(--transition);
+}
+
+.title__container:hover .lens {
+  transform: rotate(130deg);
+}
+
+.light_3 {
+  transform-origin: center center;
+  transform: scale(calc((var(--d3) + var(--esp))));
+  transition: var(--transition);
+}
+
+.title__container:hover .light_3 {
+  transform-origin: center center;
+  transform: scale(calc((calc(var(--d3) * var(--esc)) + var(--esp))));
+}
+
+.title__container:active .light_3 {
+  transform: scale(calc((calc(var(--d3) * var(--escd)) + var(--esp))));
+  transition: all 100ms ease;
+}
+
+.dark_3 {
+  transform-origin: center center;
+  transform: scale(var(--d3));
+  transition: var(--transition);
+}
+
+.title__container:hover .dark_3 {
+  transform-origin: center center;
+  transform: scale(calc(var(--d3) * var(--esc)));
+}
+
+.title__container:active .dark_3 {
+  transform: scale(calc(var(--d3) * var(--escd)));
+  stroke-width: 1;
+  transition: all 100ms ease;
+}
+
+.light_4 {
+  transform-origin: center center;
+  transform: scale(calc(var(--d3) - var(--esp)));
+  transition: var(--transition);
+}
+
+.title__container:hover .light_4 {
+  transform-origin: center center;
+  transform: scale(calc((calc(var(--d3) * var(--esc)) - var(--esp))));
+}
+
+.title__container:active .light_4 {
+  transform: scale(calc((calc(var(--d3) * var(--escd)) - var(--esp))));
+  transition: all 100ms ease;
+}
+
+.title__container:active .lens {
+  transform: rotate(0deg);
+  transition: all 100ms ease;
+}

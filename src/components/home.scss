@@ -1,0 +1,49 @@
+.container.testimonials__container {
+    width: 100vw;
+    aspect-ratio: 2.5 / 1;
+    overflow: hidden;
+}
+
+#landing {
+    margin-top: 0;
+}
+
+.client__avatar > img {
+    height: 100%;
+}
+
+.client__avatar {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    position: fixed;
+    place-items: center;
+    overflow: hidden;
+}
+
+.testimonial {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    background: var(--color-bg-variant);
+    text-align: justify;
+    user-select: none;
+}
+
+.client__review {
+    position: relative;
+    color: var(--color-light);
+    font-weight: 200;
+    display: block;
+    margin: 0.8 auto 0;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    color: var(--color-primary);
+    transform: scale(0.5);
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet-active {
+     background: var(--color-primary);
+ }

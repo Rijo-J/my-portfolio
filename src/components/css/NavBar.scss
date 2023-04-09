@@ -1,0 +1,120 @@
+@import 'lens.scss';
+
+.nav {
+  &__header {
+    background-color: var(--color-white);
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 300px;
+    height: 100vh;
+    z-index: 2;
+    transition: var(--transition);
+    transform: translateX(var(--translate-left));
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__icons {
+    background-color: red;
+    display: block;
+    height: 0px;
+  }
+
+  &__menu-icon {
+    backdrop-filter: hue-rotate(180deg);
+    color: var(--color-light);
+    position: fixed;
+    top: 1.5rem;
+    left: 320px;
+    font-size: 3.5rem;
+    transition: var(--transition);
+  }
+}
+
+#nav__close {
+  opacity: 0;
+}
+
+.left__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  &__container {
+    font-family: 'Cinzel', serif;
+    display: flex;
+    height: 6.5rem;
+    font-size: 2.5rem;
+
+    &-title {
+      text-align: right;
+      width: 100%;
+      height: 100%;
+
+      & h2 {
+        position: relative;
+        margin: 0.5rem 0.7rem 0 0;
+        font-size: 2.7rem;
+        letter-spacing: 0.6rem;
+      }
+
+      & div {
+        position: absolute;
+        right: 0.5rem;
+        bottom: -0.5rem;
+        font-size: 1rem;
+        text-align: left;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        letter-spacing: 0.45rem;
+      }
+    }
+  }
+}
+
+.left__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  &__btn {
+    display: flex;
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 1.5rem 2.3rem;
+
+    &-active {
+      background-color: var(--color-bg-variant);
+      color: var(--color-white);
+    }
+  }
+
+  &__mid-btn {
+    &:hover {
+      color: var(--color-bg-variant);
+    }
+
+    &-active {
+      background-color: var(--color-bg-variant);
+      color: var(--color-white);
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+/* MEDIA QUERIES  -> SMALL DEVICES*/
+@media screen and (max-width: 600px) {
+}
