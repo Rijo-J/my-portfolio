@@ -21,13 +21,11 @@
   }
 
   &__icons {
-    background-color: red;
     display: block;
     height: 0px;
   }
 
   &__menu-icon {
-    backdrop-filter: hue-rotate(180deg);
     color: var(--color-light);
     position: fixed;
     top: 1.5rem;
@@ -48,7 +46,6 @@
 
 .title {
   &__container {
-    font-family: 'Cinzel', serif;
     display: flex;
     height: 6.5rem;
     font-size: 2.5rem;
@@ -59,6 +56,7 @@
       height: 100%;
 
       & h2 {
+        font-family: 'Cinzel', serif;
         position: relative;
         margin: 0.5rem 0.7rem 0 0;
         font-size: 2.7rem;
@@ -110,6 +108,18 @@
       }
     }
   }
+}
+
+.logo1 {
+  background-color: black;
+  padding: 0 10px 20px 30px;
+  border-radius: 800px;
+  height: 100px;
+  width: 238px;
+  z-index: 1;
+  top: 10px;
+  left: 50%;
+  margin-left: -119px;
 }
 
 @media screen and (max-width: 1024px) {

@@ -6,6 +6,8 @@
 
 #landing {
     margin-top: 0;
+    display: block;
+    position: relative;
 }
 
 .client__avatar > img {
@@ -22,7 +24,6 @@
 }
 
 .testimonial {
-    display: grid;
     grid-template-columns: 1fr auto;
     gap: 3rem;
     align-items: center;
@@ -42,6 +43,7 @@
 .swiper-button-next:after, .swiper-button-prev:after {
     color: var(--color-primary);
     transform: scale(0.5);
+    
 }
 
 .swiper-pagination-clickable .swiper-pagination-bullet-active {

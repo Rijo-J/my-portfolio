@@ -1,0 +1,279 @@
+$colorBlack: #111;
+$colorWhite: #fff;
+$colorTextPrimary: #292929;
+$colorMenu: #e3efff;
+
+$contentGap: 120px;
+
+$transitions: 300ms ease;
+
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} $transitions;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin top-actions {
+  --top-height: 18px;
+
+  display: grid;
+
+  grid-template-columns: 1fr var(--top-height) var(--top-height);
+  grid-template-rows: var(--top-height);
+  gap: 30px;
+  align-items: center;
+
+  @include mediumScreens() {
+    --top-height: 24px;
+  }
+}
+
+@mixin scroll-actions {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &--with-menu {
+    overflow: hidden;
+  }
+}
+
+@mixin sectionTitle {
+  margin-bottom: 48px;
+
+  text-align: center;
+
+  --size-font-section: 32px;
+  font-weight: 700;
+  font-size: var(--size-font-section);
+  line-height: var(--size-font-section);
+  letter-spacing: -1.5px;
+
+  @include mediumScreens {
+    margin-bottom: 64px;
+
+    --size-font-section: 40px;
+  }
+
+  @include mediumScreens {
+    --size-font-section: 48px;
+  }
+}
+
+@mixin mediumScreens {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin largeScreens {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+.container2 {
+  max-width: 1260px;
+  margin: 0 auto;
+
+  --horizontalPadding: 20px;
+  padding: 0 var(--horizontalPadding);
+
+  @include mediumScreens() {
+    --horizontalPadding: 72px;
+  }
+
+  @include largeScreens() {
+    --horizontalPadding: 120px;
+  }
+}
+
+
+@mixin sectionTitle {
+  margin-bottom: 48px;
+
+  text-align: center;
+
+  --size-font-section: 32px;
+  font-weight: 700;
+  font-size: var(--size-font-section);
+  line-height: var(--size-font-section);
+  letter-spacing: -1.5px;
+
+  @include mediumScreens {
+    margin-bottom: 64px;
+
+    --size-font-section: 40px;
+  }
+
+  @include mediumScreens {
+    --size-font-section: 48px;
+  }
+}
+
+@mixin mediumScreens {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin largeScreens {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+.contacts {
+  &__title {
+    @include sectionTitle;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Cinzel', serif;
+    font-size: 2.4rem;
+    color: black;
+    
+
+    margin-bottom: 48px;
+  }
+
+  &__container {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    font-family: 'Cinzel', serif;
+
+    justify-content: center;
+    align-content: center;
+    gap: 30px;
+
+    @include mediumScreens {
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    @include mediumScreens {
+      margin-top: 20px;
+    }
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__input {
+    margin-bottom: 24px;
+    padding: 16px 24px;
+
+    width: 100%;
+
+    border: 1px solid transparent;
+    border-radius: 40px;
+
+    background-color: #f8f8fa;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    &:hover {
+      border-color: #d5d7de;
+    }
+
+    &-message {
+      min-height: 150px;
+      border-radius: 16px;
+
+      font-style: normal;
+      font-size: 14px;
+
+      color: #7e7e83;
+      overflow: hidden;
+
+      &empty:before {
+        content: attr(data-placeholder);
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $colorTextPrimary;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  &__item {
+    font-size: 16px;
+  }
+  &__subtitle {
+    margin-bottom: 8px;
+    color: #9fadc2;
+  }
+
+  &__text {
+    display: block;
+    color: #3e3e3e;
+    text-decoration: none;
+  }
+}
+
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 56px;
+
+  border: 3px solid $colorTextPrimary;
+  border-radius: 40px;
+
+  background-color: $colorTextPrimary;
+  color: $colorWhite;
+
+  font-family: 'Cinzel', serif;
+  font-size: 1.7rem;
+
+  
+  line-height: 1.7;
+  cursor: pointer;
+
+  transition: color $transitions, background-color $transitions;
+
+  &:hover {
+    background-color: $colorWhite;
+    color: $colorBlack;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    outline: none;
+    background-color: $colorBlack;
+    color: $colorWhite;
+  }
+
+  &--limit {
+    max-width: 320px;
+
+    @include mediumScreens {
+      max-width: 392px;
+    }
+
+    @include largeScreens {
+      max-width: 324px;
+    }
+  }
+}
